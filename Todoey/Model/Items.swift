@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Items {
+class Items: Encodable, Decodable {
     var title : String = ""
     var done : Bool = false
     //var time : Date = 2019-1-1
