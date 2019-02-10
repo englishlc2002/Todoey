@@ -11,7 +11,7 @@
 		070F8BB4220C7879006560E5 /* TodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070F8BB3220C7879006560E5 /* TodoListViewController.swift */; };
 		070F8BB7220C7879006560E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 070F8BB5220C7879006560E5 /* Main.storyboard */; };
 		070F8BB9220C789E006560E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 070F8BB8220C789E006560E5 /* Assets.xcassets */; };
-		070F8BBC220C789E006560E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 070F8BBA220C789E006560E5 /* LaunchScreen.storyboard */; };
+		073D8678220FBDBA00C96C93 /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073D8677220FBDBA00C96C93 /* Items.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,8 +20,8 @@
 		070F8BB3220C7879006560E5 /* TodoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewController.swift; sourceTree = "<group>"; };
 		070F8BB6220C7879006560E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		070F8BB8220C789E006560E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		070F8BBB220C789E006560E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		070F8BBD220C789E006560E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		073D8677220FBDBA00C96C93 /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +55,45 @@
 			isa = PBXGroup;
 			children = (
 				070F8BB1220C7879006560E5 /* AppDelegate.swift */,
-				070F8BB3220C7879006560E5 /* TodoListViewController.swift */,
-				070F8BB5220C7879006560E5 /* Main.storyboard */,
-				070F8BB8220C789E006560E5 /* Assets.xcassets */,
-				070F8BBA220C789E006560E5 /* LaunchScreen.storyboard */,
+				073D8674220FBCEE00C96C93 /* Model */,
+				073D8675220FBD1800C96C93 /* View */,
+				073D8676220FBD3800C96C93 /* Controller */,
+				073D8679220FBDF000C96C93 /* Supporting Files */,
 				070F8BBD220C789E006560E5 /* Info.plist */,
 			);
 			path = Todoey;
+			sourceTree = "<group>";
+		};
+		073D8674220FBCEE00C96C93 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				073D8677220FBDBA00C96C93 /* Items.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		073D8675220FBD1800C96C93 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				070F8BB5220C7879006560E5 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		073D8676220FBD3800C96C93 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				070F8BB3220C7879006560E5 /* TodoListViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		073D8679220FBDF000C96C93 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				070F8BB8220C789E006560E5 /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,7 +154,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				070F8BBC220C789E006560E5 /* LaunchScreen.storyboard in Resources */,
 				070F8BB9220C789E006560E5 /* Assets.xcassets in Resources */,
 				070F8BB7220C7879006560E5 /* Main.storyboard in Resources */,
 			);
@@ -136,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				070F8BB4220C7879006560E5 /* TodoListViewController.swift in Sources */,
+				073D8678220FBDBA00C96C93 /* Items.swift in Sources */,
 				070F8BB2220C7879006560E5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -149,14 +181,6 @@
 				070F8BB6220C7879006560E5 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		070F8BBA220C789E006560E5 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				070F8BBB220C789E006560E5 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
