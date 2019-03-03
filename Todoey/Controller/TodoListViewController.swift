@@ -113,17 +113,6 @@ class TodoListViewController: SwipeTableViewController {
     
 //MARK - Model Manipulation Methods
     
-    func save(item: Item) {
-        do {
-            try realm.write {
-                realm.add(item)
-            }
-        } catch {
-            print("Error saving item, \(error)")
-        }
-        tableView.reloadData()
-    }
-    
     func loadItems() {
         
         todoItems = selectedCategory?.items.sorted(byKeyPath: "title", ascending: true)
@@ -133,7 +122,7 @@ class TodoListViewController: SwipeTableViewController {
     
     override func updateModel(at indexPath: IndexPath) {
         
-        if let itemDeleted = self.todoItems?[indexPath.row] {
+        if let itemDeleted = todoItems?[indexPath.row] {
             do {
                 try self.realm.write {
                     self.realm.delete(itemDeleted)
@@ -167,7 +156,6 @@ class TodoListViewController: SwipeTableViewController {
                 } catch {
                     print("Error saving item \(error)")
                 }
-        
             }
         
             self.tableView.reloadData()
@@ -194,6 +182,7 @@ extension TodoListViewController: UISearchBarDelegate {
         
         todoItems = todoItems?.filter("title CONTAINS[cd] %@", searchBar.text!).sorted(byKeyPath: "dateCreated", ascending: true)
         
+        tableView.reloadData()
     }
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {

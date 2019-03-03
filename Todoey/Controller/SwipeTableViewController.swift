@@ -10,7 +10,7 @@ import UIKit
 import SwipeCellKit
 
 class SwipeTableViewController: UITableViewController, SwipeTableViewCellDelegate {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,30 +29,28 @@ class SwipeTableViewController: UITableViewController, SwipeTableViewCellDelegat
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        
         guard orientation == .right else { return nil }
         
         let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
-            // handle action by updating model with deletion
             
             self.updateModel(at: indexPath)
-
         }
         
-        // customize the action appearance
         deleteAction.image = UIImage(named: "delete-icon")
         
         return [deleteAction]
     }
     
-    func collectionView(_ collectionView: UICollectionView, editActionsOptionsForItemAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
-        var options = SwipeOptions()
+    func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
+        var options = SwipeTableOptions()
         options.expansionStyle = .destructive
-        options.transitionStyle = .border
         return options
     }
 
     func updateModel(at indexPath: IndexPath) {
         
+        print("Item delted from superclass")
     }
     
 }

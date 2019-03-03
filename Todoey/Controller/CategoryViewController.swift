@@ -63,8 +63,8 @@ class CategoryViewController: SwipeTableViewController {
         let destinationVC = segue.destination as! TodoListViewController
         
         if let indexPath = tableView.indexPathForSelectedRow {
+            
             destinationVC.selectedCategory = categories?[indexPath.row]
-        
         }
     }
     
@@ -93,16 +93,7 @@ class CategoryViewController: SwipeTableViewController {
         
         super.updateModel(at: indexPath)
         
-        if let categoryDeleted = self.categories?[indexPath.row] {
-            do{
-                try self.realm.write {
-                    self.realm.delete(categoryDeleted)
-                }
-            } catch {
-                print("Error deleting category, \(error)")
-            }
-            
-        }
+        
 
     }
     
